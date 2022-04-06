@@ -1,26 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
-    int num = 1, i, j;
+void main()
+{
+    int num[20], i, cont;
 
-    for (j = 0; j < 6; j++){
-        i = 1;
-        while (i <= 5){
-            printf("%d\t", num);
-            num++;
-            i++;
-        }
-        printf("\n");
-        num-=5;
-        i = 1;
-        while (i <= 5){
-            printf("%d\t", num*10);
-            num++;
-            i++;
-        }
-        printf("\n");
+    for(i=99; i>89; i--){
+        num[cont] = i;
+        cont++;
     }
-
-    return 0;
+    for(i=0; i<10; i++){
+        printf("o %dº numero e: %d\n", i, num[i]);
+    }
 }
