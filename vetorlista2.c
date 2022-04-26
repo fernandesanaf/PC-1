@@ -1,115 +1,123 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 void um();
 void dois();
 void tres();
 void quatro();
 
-int main(){
-            int opcao;
+int main()
+{
+    setlocale(LC_ALL, "");
+    int opcao;
 
-        printf("-----------------------------------------------------------\n");
-        printf("1 - UM      | 3 - TRES  \n");
-        printf("2 - DOIS    | 4 - QUATRO \n");
-        printf("-----------------------------------------------------------\n");
-        printf("Escolha: ");
-        scanf("%d", &opcao);
+    printf("-----------------------------------------------------------\n");
+    printf("1 - UM      | 3 - TR�S  \n");
+    printf("2 - DOIS    | 4 - QUATRO \n");
+    printf("-----------------------------------------------------------\n");
+    printf("Escolha: ");
+    scanf("%d", &opcao);
 
-        switch (opcao){
-        case 1:
-            um();
-            break;
+    switch (opcao)
+    {
+    case 1:
+        um();
+        break;
 
-        case 2:
-            dois();
-            break;
+    case 2:
+        dois();
+        break;
 
-        case 3:
-            tres();
-            break;
+    case 3:
+        tres();
+        break;
 
-        case 4:
-            quatro();
-            break;
+    case 4:
+        quatro();
+        break;
 
-        default:
-            printf("Valor Incorreto");
-            break;
-        }
+    default:
+        printf("Valor Incorreto");
+        break;
+    }
     return 0;
 }
 
-// um() Faça um programa que declare um vetor de sete números
-// inteiros. O usuário deve informar, na sequência inversa das
-// posições, os valores a serem armazenados.
-// Ao final seu programa deverá imprimir todos os elementos do
-// vetor, com suas respectivas posições.
-
-void um(){
+void um()
+{
     int num[7], i;
-    
-    printf("digite na sequencia inversa\n");
-    for(i=7;i>0;i--){
-        printf("digite o %dº numero: ", i);
-        scanf("%d", &num[7-i]);
-    }
-    
-    for(i=0;i<7;i++){
-        printf("o %dº numero digitado e: %d\n", i, num[i]);
+
+    printf("digite na sequ�ncia inversa\n");
+    for (i = 6; i >= 0; i--)
+    {
+        printf("digite o %dº número: ", i + 1);
+        scanf("%d", &num[i]);
     }
 
-    return 0;
-}
-
-// dois() Faça um programa que declare um vetor de seis números
-// inteiros. Inicialize todas as posições do vetor com o valor
-// zero. O usuário deverá povoar o vetor em qualquer ordem. Para
-// tal seu programa deverá solicitar as posições (índices) e os
-// valores a serem inseridos nas respectivas posições. Ao final
-// seu programa deverá imprimir todos os elementos do vetor, com
-// suas respectivas posições.
-
-void dois(){
-    int num[6], i;
-    
-    for(i=0;i<6;i++){
-        num[i]=0;
-    }
-    
-    for(i=0;i<6;i++){
-        // printf("o %dº numero digitado e: %d\n", i+1, num[i]);
-            printf("digite o indice que deseja preencher: ");
-            scanf("%d",&i);
-            printf("digite o numero que deseja colocar no vetor");
-            scanf("%d",&num[i]);
-
-    }
-
-    for(i=0;i<6;i++){
-        printf("%d",num[i]);
+    for (i = 0; i < 7; i++)
+    {
+        printf("o %d n�mero digitado �: %d\n", i + 1, num[i]);
     }
 
     return 0;
 }
 
-// tres() Faça um programa que declare um vetor de vinte
-// números inteiros.
-// O programa deverá atribuir em cada posição um número aleatório
-// entre 1 e 10. Verifique a existência de elementos iguais a 7,
-// mostrando as posições que esses elementos apareceram.
+void dois()
+{
+    int num[6], i, posicao, valor;
+    char continuar = 's';
+    for (i = 0; i < 6; i++)
+    {
+        num[i] = 0;
+    }
+    while (continuar == 's')
+    {
+        printf("digite a posi��o do vetor: ");
+        scanf("%d", &posicao);
+        printf("digite o valor que deseja colocar no vetor: ");
+        scanf("%d", &valor);
+        if (posicao >= 0 && posicao < 6)
+        {
+            num[posicao] = valor;
+        }
+        else
+        {
+            printf("n�mero maior que o vetor\n");
+        }
 
+        printf("deseja continuar?\n digite 's' para SIM \n 'n' para N�O: \n");
+        scanf("%s", &continuar);
+    }
 
-// quatro() Faça um programa que declare um vetor de vinte
-// números inteiros.
-// O programa deverá atribuir em cada posição um número aleatório
-// entre 1 e 10.
-// Calcule e mostre:
-// • A quantidade de números pares;
-// • A posição dos números pares;
-// • A quantidade de números ímpares;
-// • A posição dos números ímpares;
+    for (i = 0; i < 6; i++)
+    {
+        printf("num[%d] = %d\n", i, num[i]);
+    }
+}
 
+void tres()
+{
+    int num[20], i;
+    for (i = 0; i < 20; i++)
+    {
+        num[i] = rand() % 10 + 1;
+        if (num[i] == 7)
+        {
+            printf("num[%d] = %d\n", num[i]);
+        }
+    }
+}
 
-// main() O usuário informa um número e executa-se o
-// procedimento referente àquele número.
+void quatro()
+{
+    int num[20], i;
+    for (i = 0; i < 20; i++)
+    {
+        num[i] = rand() % 10 + 1;
+        if (num[i] == 7)
+        {
+            printf("num[%d] = %d\n", num[i]);
+        }
+    }
+}
