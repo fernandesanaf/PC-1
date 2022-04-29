@@ -51,7 +51,7 @@ void um()
     printf("digite na sequência inversa\n");
     for (i = 6; i >= 0; i--)
     {
-        printf("digite o %dÂº nÃºmero: ", i + 1);
+        printf("digite o %d número: ", i + 1);
         scanf("%d", &num[i]);
     }
 
