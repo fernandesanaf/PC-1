@@ -113,10 +113,16 @@ void tres()
     {
         num[i] = 0;
     }
+<<<<<<< Updated upstream
 
     for (i = 0; i < 5; i++)
     {
         printf("o %dº numero digitado e: %d\n", i + 1, num[i]);
+=======
+    
+    for(i=0;i<5;i++){
+        printf("o %dº numero digitado e%d\n",:  i+1, num[i]);
+>>>>>>> Stashed changes
     }
 }
 

@@ -1,4 +1,5 @@
 #include <stdio.h>
+<<<<<<< Updated upstream
 #include <stdlib.h>
 #include <locale.h>
 #include <string.h>
