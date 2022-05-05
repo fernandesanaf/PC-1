@@ -18,9 +18,9 @@ struct Horas
 
 int main()
 {
-    struct Horas a[6], i;
+    struct Horas a[5], i;
 
-    for (i == 0; i < 6; i++)
+    for (i == 0; i < 4; i++)
     {
         printf(" hora: ");
         scanf("%d", &a.hora);
