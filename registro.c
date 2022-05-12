@@ -22,6 +22,7 @@ int main()
 
     for (i == 0; i < 4; i++)
     {
+        if
         printf(" hora: ");
         scanf("%d", &a.hora);
 
