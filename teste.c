@@ -1,5 +1,4 @@
 #include <stdio.h>
-<<<<<<< Updated upstream
 #include <stdlib.h>
 #include <locale.h>
 #include <string.h>
@@ -11,12 +10,39 @@
 
 int main()
 {
-    int v[8], i, x,y;
+    int numeros[8], i = 0, p1, p2, soma;
 
-    for (i = 0; i < 8; i++)
+    printf("Entre com os numeros:\n");
+
+    for (i = 0; i <= 7; i++)
     {
-        printf("digite o %d número: ", i + 1);
-        scanf("%d", &num[i]);
+        printf("Entre com o %d° numero: ", i);
+        scanf("%d", &numeros[i]);
     }
-    
+
+    printf("Entre com a 1° posicao para somar: ");
+    scanf("%d", &p1);
+
+    printf("Entre com o 2° posicao para somar: ");
+    scanf("%d", &p2);
+
+    printf("\n");
+
+    for (i = 0; i <= 7; i++)
+    {
+        if (p1 == i)
+        {
+            soma = numeros[i];
+            printf("Posicao %d, numero: %d", numeros[i]);
+        }
+        if (p2 == i)
+        {
+            soma = soma + numeros[i];
+            printf("Posicao %d,numero: %d\n", p2, numeros[i]);
+        }
+    }
+
+    printf("\n");
+
+    printf("A soma é: %d\n", soma);
 }
