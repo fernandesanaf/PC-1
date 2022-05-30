@@ -153,39 +153,35 @@ int v[15], i, v1[15], v2[15];
 // representam duas posições no vetor. Escreva a soma dos valores
 // armazenados no vetor nas respectivas posições X e Y.
 void tres(){
-    int numeros[8], contador = 0, posicao1, posicao2, soma;
+    int num[8], i = 0, p1, p2, soma;
 
-    printf("Entre com os numeros:\n");
-
-    for (contador = 0; contador <= 7; contador++){
-
-        printf("Entre com o %d° numero: ", contador);
-            scanf("%d", &numeros[contador]);
+    for (i = 0; i <= 7; i++){
+        printf("digite o %d numero: ", i);
+        scanf("%d", &num[i]);
     }
 
-    printf("Entre com a 1° posicao para somar: ");
-            scanf("%d", &posicao1);
+    printf("digite a 1 posicao para somar: ");
+    scanf("%d", &p1);
 
-    printf("Entre com o 2° posicao para somar: ");
-            scanf("%d", &posicao2);
+    printf("digite a 2 posicao para somar: ");
+    scanf("%d", &p2);
 
     printf("\n");
 
-    for(contador = 0; contador <= 7; contador++){
-        if (posicao1 == contador){
-            soma = numeros[contador];
-            printf("Posicao %d contemo numero: %d\n",posicao1, numeros[contador]);
+    for(i = 0; i <= 7; i++){
+        if (p1 == i){
+            soma = num[i];
+            printf("posicao %d: %d\n",p1, num[i]);
         }
-        if (posicao2 == contador){
-            soma = soma + numeros[contador];
-            printf("Posicao %d contemo numero: %d\n",posicao2, numeros[contador]);
+        if (p2 == i){
+            soma = soma + num[i];
+            printf("posicao %d: %d\n",p2, num[i]);
         }
     }
 
     printf("\n");
 
-    printf("A soma é: %d\n", soma);
-
+    printf("soma das posicoes: %d\n", soma);
 }
 
 // quatro() Leia um vetor de tamanho informado pelo usuário e
@@ -193,47 +189,47 @@ void tres(){
 // em que x se encontra no vetor. Caso x não pertencer ao vetor
 // uma mensagem de erro deve apresentada para o usuário.
 void quatro(){
-    int tamanho = 0, entrada, contador, randon, teste = 0;
+    int i, todosnum, teste = 0, tamanho = 0, pesquisa;
 
-    printf("Entre com o tamanho do vetor: ");
+    printf("digite o tamanho do vetor: ");
         scanf("%d", &tamanho);
 
     tamanho = tamanho - 1;
 
-    int numeros[tamanho];
+    int num[tamanho];
 
-    printf("Entre com o valor maximo para numeros aleatórios: ");
-        scanf("%d", &randon);
+    printf("digite os numeros: ");
+        scanf("%d", &todosnum);
 
-    printf("Entre com o numero da pesquisa: ");
-        scanf("%d", &entrada);
-
-    printf("\n");
-
-    for(contador = 0; contador <= tamanho; contador++){
-        numeros[contador] = rand() % randon;
-    }
-
-
-    for(contador = 0; contador <= tamanho; contador++){
-        numeros[contador] = rand() % randon;
-    }
-
-    for(contador = 0; contador <= tamanho; contador++){ 
-            printf("Posição %d: %d\n",contador, numeros[contador]);
-    }
+    printf("digite o numero para pesquisar: ");
+        scanf("%d", &pesquisa);
 
     printf("\n");
 
-    for(contador = 0; contador <= tamanho; contador++){
-        if(entrada == numeros[contador]){
-            printf("Tem o numero %d na posicao %d\n", entrada, contador);
+    for(i = 0; i <= tamanho; i++){
+        num[i] = rand() % todosnum;
+    }
+
+
+    for(i = 0; i <= tamanho; i++){
+        num[i] = rand() % todosnum;
+    }
+
+    for(i = 0; i <= tamanho; i++){ 
+            printf("posição %d: %d\n",i, num[i]);
+    }
+
+    printf("\n");
+
+    for(i = 0; i <= tamanho; i++){
+        if(pesquisa == num[i]){
+            printf("numero %d na posicao %d\n", pesquisa, i);
             teste = 1;
         }
     }
 
     if(teste == 0){
-         printf("Nao tem o numero %d no vetor\n", entrada);
+         printf("nao tem o numero %d no vetor\n", pesquisa);
     }
 }
 
@@ -242,18 +238,18 @@ void quatro(){
 // presente em v apresente todas as posições em que n se encontra
 // em v.
 void cinco(){
-    int numeros[15], contador, entrada;
+    int num[15], i, x;
 
-    for(contador = 0; contador <= 14; contador++){
-        numeros[contador] = (rand() % 20) + 30;
+    for(i = 0; i <= 14; i++){
+        num[i] = (rand() % 20) + 30;
     }
 
-    printf("Entre com o numero (20 a 50): ");
-        scanf("%d", &entrada);
+    printf("digite um numero de 20 a 50: ");
+        scanf("%d", &x);
 
-    for(contador = 0; contador <= 14; contador++){
-        if(entrada == numeros[contador]){
-            printf("Tem o numero %d na posicao %d\n", entrada, contador);
+    for(i = 0; i <= 14; i++){
+        if(x == num[i]){
+            printf("numero %d na posicao %d\n", x, i);
         }
     }
 }
@@ -262,35 +258,36 @@ void cinco(){
 // forneça uma saída análoga ao da seguente figura de exemplo.
 // Não crie outros vetores.
 void seis(){
-        int numeros[10], contador, contador2 = 0, aux = 0;
+   int num[10], i, j = 0, x = 0;
 
-    for(contador = 0; contador <= 9; contador++){
-        numeros[contador] = (rand() % 5) + 1;
+    for(i = 0; i <= 9; i++){
+        num [i] = (rand() % 5) + 1;
     }
 
     printf("V |");
-    for(contador = 0; contador <= 9; contador++){
-        printf("%d\t", numeros[contador]);
+    for(i = 0; i <= 9; i++){
+        printf("%d\t", num [i]);
     }
 
     printf("\n");
 
-    for(contador2 = 0; contador2 <= 4; contador2++){
+    for(j = 0; j <= 4; j++){
 
         printf("\n");
-        printf("%d |", contador2+1);
-        aux = contador2+1;
+        printf("%d |", j+1);
+        x = j+1;
 
-        for(contador = 0; contador <= 9; contador++){
-            if(aux == numeros[contador]){
+        for(i = 0; i <= 9; i++){
+            if(x == num =[i]){
                 printf("X\t");
-            }else{
+            }
+            else{
                 printf(" \t");
             }
         }
     }
 
-    printf("\n");
+    printf("\n");     
 
 }
 // sete() Crie um vetor v de 10 números inteiros. Inicialize v
@@ -298,27 +295,27 @@ void seis(){
 // forneça uma saída análoga ao da seguente figura de exemplo.
 // Não crie outros vetores.
 void sete(){
-int numeros[10], contador, contador2 = 0, aux = 0;
+    int num[10], i, j = 0, x = 0;
 
-    for(contador = 0; contador <= 9; contador++){
-        numeros[contador] = (rand() % 5) + 1;
+    for(i = 0; i <= 9; i++){
+        num [i] = (rand() % 5) + 1;
     }
 
     printf("V |");
-    for(contador = 0; contador <= 9; contador++){
-        printf("%d\t", numeros[contador]);
+    for(i = 0; i <= 9; i++){
+        printf("%d\t", num [i]);
     }
 
     printf("\n");
 
-    for(contador2 = 0; contador2 <= 4; contador2++){
+    for(j = 0; j <= 4; j++){
 
         printf("\n");
-        printf("%d |", contador2+1);
-        aux = contador2+1;
+        printf("%d |", j+1);
+        x = j+1;
 
-        for(contador = 0; contador <= 9; contador++){
-            if(aux == numeros[contador]){
+        for(i = 0; i <= 9; i++){
+            if(x == num =[i]){
                 printf("X");
             }
         }
@@ -333,38 +330,38 @@ int numeros[10], contador, contador2 = 0, aux = 0;
 // programa que Armazene em um vetor v3 uma saída análoga ao da
 // seguinte figura de exemplo. Apresente o vetor v3.
 void oito(){
-int numeros[10], contador;
+    int num[10], i;
     char letras[5], letras_saida[10];
 
-    for(contador = 0; contador <= 9; contador++){
-        numeros[contador] = (rand() % 5) + 1;
+    for(i = 0; i <= 9; i++){
+        num[i] = (rand() % 5) + 1;
     }
 
-    for(contador = 0; contador <= 4; contador++){
-        printf("Entre com as letras:");
-            scanf("%s", &letras[contador]);
+    for(i = 0; i <= 4; i++){
+        printf("digite as letras:");
+            scanf("%s", &letras[i]);
     }
 
     printf("\n");
     printf("V  |");
-    for(contador = 0; contador <= 9; contador++){
-        printf("%d\t", numeros[contador]);
+    for(i = 0; i <= 9; i++){
+        printf("%d\t", num[i]);
     }
 
     printf("\n");
     printf("V2 |");
-    for(contador = 0; contador <= 4; contador++){
-        printf("%c\t", letras[contador]);
+    for(i = 0; i <= 4; i++){
+        printf("%c\t", letras[i]);
     }
 
-    for(contador = 0; contador <= 9; contador++){
-        letras_saida[contador] = letras[numeros[contador]-1];
+    for(i = 0; i <= 9; i++){
+        letras_saida[i] = letras[num[i]-1];
     }
 
     printf("\n");
     printf("V3 |");
-    for(contador = 0; contador <= 9; contador++){
-        printf("%c\t", letras_saida[contador]);
+    for(i = 0; i <= 9; i++){
+        printf("%c\t", letras_saida[i]);
     }
 
     printf("\n");
