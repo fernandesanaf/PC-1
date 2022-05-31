@@ -3,46 +3,42 @@
 #include <locale.h>
 #include <string.h>
 
-// tres() Leia um vetor de 8 posições com valores informados
-// pelo usuário, em seguida, leia também dois valores X e Y que
-// representam duas posições no vetor. Escreva a soma dos valores
-// armazenados no vetor nas respectivas posições X e Y.
 
 int main()
 {
-    int numeros[8], i = 0, p1, p2, soma;
+    int num[10], i;
+    char letras[5], letras_saida[10];
 
-    printf("Entre com os numeros:\n");
-
-    for (i = 0; i <= 7; i++)
-    {
-        printf("Entre com o %d° numero: ", i);
-        scanf("%d", &numeros[i]);
+    for(i = 0; i <= 9; i++){
+        num[i] = (rand() % 5) + 1;
     }
 
-    printf("Entre com a 1° posicao para somar: ");
-    scanf("%d", &p1);
-
-    printf("Entre com o 2° posicao para somar: ");
-    scanf("%d", &p2);
-
-    printf("\n");
-
-    for (i = 0; i <= 7; i++)
-    {
-        if (p1 == i)
-        {
-            soma = numeros[i];
-            printf("Posicao %d, numero: %d", numeros[i]);
-        }
-        if (p2 == i)
-        {
-            soma = soma + numeros[i];
-            printf("Posicao %d,numero: %d\n", p2, numeros[i]);
-        }
+    for(i = 0; i <= 4; i++){
+        printf("digite as letras:");
+            scanf("%s", &letras[i]);
     }
 
     printf("\n");
+    printf("V  |");
+    for(i = 0; i <= 9; i++){
+        printf("%d\t", num[i]);
+    }
 
-    printf("A soma é: %d\n", soma);
+    printf("\n");
+    printf("V2 |");
+    for(i = 0; i <= 4; i++){
+        printf("%c\t", letras[i]);
+    }
+
+    for(i = 0; i <= 9; i++){
+        letras_saida[i] = letras[num[i]-1];
+    }
+
+    printf("\n");
+    printf("V3 |");
+    for(i = 0; i <= 9; i++){
+        printf("%c\t", letras_saida[i]);
+    }
+
+    printf("\n");
 }
