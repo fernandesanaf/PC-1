@@ -11,7 +11,7 @@ int main()
 
     for (i = 0; i < 15; i++)
     {
-        printf("digite o %dº valor: ", i + 1);
+        printf("digite o %d valor: ", i + 1);
         scanf("%d", &vetor[i]);
     }
 

@@ -39,7 +39,7 @@ int main()
                 quant_negativos++;
             }
         }
-        printf("numeros negativos na linha %d: %d", i, quant_negativos);
+        printf("\n numeros negativos na linha %d: %d", i, quant_negativos);
     }
 
     printf("\n");
@@ -54,7 +54,7 @@ int main()
         }
 
         media_linha = soma / 4;
-        printf("media da linha %d: %.2f", i, media_linha);
+        printf("\n media da linha %d: %.2f", i, media_linha);
     }
     printf("\n");
     for (i = 0; i < 4; i++)
@@ -66,7 +66,7 @@ int main()
             soma += matriz[j][i];
         }
         media_coluna = soma / 2;
-        printf("media da coluna %d: %.2f", i, media_coluna);
+        printf("\n media da coluna %d: %.2f", i, media_coluna);
     }
 
     return 0;

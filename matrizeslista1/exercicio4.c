@@ -57,7 +57,7 @@ int main(){
     }
     
     // c)
-    printf("#\tNota1\tNota2\tNota3\tNota4\tNota5\tMédia\tSituação");
+    printf("#\tNota 1\tNota 2\tNota 3\tNota 4\tNota 5\tMedia\tSituacao \n");
 
     for (i = 0; i < 15; i++){
         printf("%d\t", i+1);
