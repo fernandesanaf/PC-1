@@ -171,7 +171,7 @@ void print_diagonal_e_zero(int num[TAMANHO][TAMANHO])
     }
 }
 
-// Fun��o que imprime todos os elementos acima da diagonal principal
+//imprime todos os elementos acima da diagonal principal
 void print_diagonal_e_cima(int num[TAMANHO][TAMANHO])
 {
     int i, j;
