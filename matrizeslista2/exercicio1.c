@@ -1,10 +1,21 @@
+// Veja na figura a seguir um exemplo do que seu programa deve fazer.
+// Seu programa deve ler a tabela de distâncias entre as cidades (código fornecido
+// abaixo) e gerar uma tabela com as distâncias conforme figura. Deverá apresentar o
+// código e o nome das cidades disponíveis.
+// O usuário fornecerá os códigos das cidades de origem e destino e o programa
+// apresentará a distância entre estas cidades.
+// Seu programa deverá apresentará também a cidade com maior distância da
+// origem (vide figura).
+// Seu programa deverá repetir até que o usuário forneça duas cidades iguais
+// (origem e destino).
+
 #include <stdio.h>
 #include <string.h>
 
 #define CIDADES 4
 
-void imprime_cidade();
-void imprime_cidade_especifica();
+void print_cidade();
+void print_cidade_especifica();
 
 int main()
 {
@@ -16,7 +27,7 @@ int main()
          {4397, 4865, 901, 0}};
     int i, j, origem, destino;
 
-    // Exibindo a tabela de dist�ncias
+    //tabela de distancias
     printf("\n            TABELA DE DISTANCIAS            ");
     printf("\n============================================\n");
     printf("ORIGEM\t\tDESTINO\t\tDISTANCIA");
@@ -25,7 +36,7 @@ int main()
     {
         for (j = 0; j < CIDADES; j++)
         {
-            imprime_cidade(cidade[i]);
+            print_cidade(cidade[i]);
             if (i == 0 || i == 2)
             {
                 printf("\t\t");
@@ -34,7 +45,7 @@ int main()
             {
                 printf("\t");
             }
-            imprime_cidade(cidade[j]);
+            print_cidade(cidade[j]);
             if (j == 0 || j == 2)
             {
                 printf("\t\t");
@@ -57,19 +68,19 @@ int main()
     }
     printf("============================================\n");
 
-    // Exibindo os c�digos das cidades para o usu�rio
+    //codigos das cidades
     printf("\nCodigos das cidades: ");
     printf("\n====================\n");
     for (i = 0; i < CIDADES; i++)
     {
         printf("%d - ", i);
-        imprime_cidade(cidade[i]);
+        print_cidade(cidade[i]);
         printf("\n");
     }
 
     do
     {
-        // Lendo os c�digos das cidades de origem e destino
+        //codigos das cidades de origem e destino
         printf("\nCodigo da cidade de origem: ");
         scanf("%d", &origem);
         printf("Codigo da cidade de destino: ");
@@ -77,14 +88,12 @@ int main()
 
         if (origem != destino)
         {
-            // Imprimindo a dist�ncia entre as cidades:
             printf("Distancia entre ");
-            imprime_cidade_especifica(cidade, origem);
+            print_cidade_especifica(cidade, origem);
             printf(" e ");
-            imprime_cidade_especifica(cidade, destino);
+            print_cidade_especifica(cidade, destino);
             printf(" e de %d km\n", distancia[origem][destino]);
 
-            // Encontrando a cidade mais distante
             int maior = 0;
             j = 0;
             for (i = 0; i < CIDADES; i++)
@@ -96,14 +105,14 @@ int main()
                 }
             }
             printf("\nA cidade mais distante de ");
-            imprime_cidade_especifica(cidade, origem);
+            print_cidade_especifica(cidade, origem);
             printf(" e ");
-            imprime_cidade(cidade[j]);
-            printf(". Elas distam %d km\n", maior);
+            print_cidade(cidade[j]);
+            printf(". Elas se distaciam por %d km\n", maior);
         }
         else
         {
-            printf("A cidade de origem e de destino sao iguais. Fim da execucao.");
+            printf("A cidade de origem e de destino sao iguais");
         }
 
     } while (origem != destino);
@@ -111,12 +120,12 @@ int main()
     return 0;
 }
 
-void imprime_cidade(char cidade[])
+void print_cidade(char cidade[])
 {
     printf("%s", cidade);
 }
 
-void imprime_cidade_especifica(char cidade[][12], int i)
+void print_cidade_especifica(char cidade[][12], int i)
 {
     printf("%s", cidade[i]);
 }
